@@ -36,7 +36,7 @@ public class Conta implements iConta {
 
     @Override
     public void transferir(double valor, Conta contaDestino) {
-        if(this.saldo >= valor){
+        if(this.saldo >= valor && this != contaDestino){
             this.saldo -=valor;
             contaDestino.saldo += valor;
             System.out.println("Transferencia de R$" + valor + " para " + contaDestino.cliente.getNome() + " realizado com sucesso!");

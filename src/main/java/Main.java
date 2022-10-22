@@ -65,22 +65,23 @@ public class Main {
                     case 3:
                         try {
                             System.out.println("Digite o numero da conta para onde ira transferir: ");
-
                             int numeroContaDestino = scan.nextInt();
 
-                            //lógica inicial para transferência
-
-                        /*for (Conta contaDestino : bancoMV.contas ) {
-                            if(contaDestino.numero == numeroContaDestino) {
-                               System.out.println("Digite o valor que deseja transferir: ");
+                        for (Conta contaDestino : bancoMV.contas ) {
+                            System.out.println(contaDestino.numero);
+                            if(numeroContaDestino == contaDestino.numero) {
+                                System.out.println("Digite o valor que deseja transferir: ");
                                 double valorTransferir = scan.nextInt();
                                 contaCliente.transferir(valorTransferir, contaDestino);
+                                break;
                             }
-                            else System.out.println("Conta nao encontrada.");
+                            else{
+                                System.out.println("Certifique-se de que a conta de destino existe.");
+                            }
+
                           }
-                        */
                         } catch (Exception e) {
-                            System.out.println("Valor nao aceito. Certifique que a conta destino existe e o valor que esta querendo enviar.");
+                            System.out.println("Houve um erro, tente novamente.");
                         }
                         break;
 
